@@ -31,7 +31,11 @@ class Purchase:
             self.__quantity = new_quantity
 
     def set_purchase_price(self, value):
-        
+        pass
+
+    def increase_quantiy(self, value: int):
+        self.__quantity += value
+        return self.__quantity
 
     def display_purchase(self):
         details = f"\n{self.__purchase_name} - {self.__price}£, {self.__category},"
