@@ -1,6 +1,7 @@
 from datetime import datetime as dt
 current_date = dt.now
 
+price = input()
 
 class Purchase:
     def __init__(self, purchase_name: str, price: float, category: str,
