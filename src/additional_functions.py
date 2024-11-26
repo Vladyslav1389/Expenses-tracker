@@ -14,6 +14,6 @@ def validate_positive_number(message: str) -> int:
             print("It is not a number. Please write a number.")
     return 0
 
-message = "Please enter a price: "
-price = validate_positive_number(message)
-print(f"price is >{price}<")
+# messages = "Please enter a price: "
+# price = validate_positive_number(messages)
+# print(f"price is >{price}<")

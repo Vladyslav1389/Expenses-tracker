@@ -1,3 +1,4 @@
+from .additional_functions import validate_positive_number
 from datetime import datetime as dt
 current_date = dt.now
 
@@ -34,8 +35,10 @@ class Purchase:
     def set_purchase_price(self, value):
         pass
 
-    def increase_quantiy(self, value: int):
-        self.__quantity += value
+    def increase_quantiy(self):
+        print(f"Current quantity is {self.__quantity}.")
+        message="How much do you want to increase the quantity?: "
+        self.__quantity += validate_positive_number(message)
         return self.__quantity
 
     def display_purchase(self):
