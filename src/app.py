@@ -35,17 +35,29 @@ class Purchase:
     def set_purchase_price(self, value):
         pass
 
-    def increase_quantiy(self):
+    def increase_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
         message="How much do you want to increase the quantity?: "
         self.__quantity += validate_positive_number(message)
+        print(f"New quantity is {self.__quantity}")
+        return self.__quantity
+
+    def decrease_quantity(self):
+        print(f"Current quantity is {self.__quantity}.")
+        message="How much do you want to decrease the quantity?: "
+        value = validate_positive_number(message)
+        if value >= self.__quantity:
+            print("Quantity could not be less than 1")
+            self.__quantity = 1
+        else:
+            self.__quantity -= value
+        print(f"New quantity is {self.__quantity}")
         return self.__quantity
 
     def display_purchase(self):
         details = f"\n{self.__purchase_name} - {self.__price}£, {self.__category},"
         details += f" quatity: {self.__quantity}, time: {self.__purchase_date}.\n"
-        details += '-' * details.__len__()
-        print(details.__len__())
+        details += '-' * len(details)
         return details
 
     def __str__(self):
