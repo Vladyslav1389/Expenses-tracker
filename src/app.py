@@ -64,3 +64,11 @@ class Purchase:
         return (f"name= {self.__purchase_name}, price= {self.__price}£,"
                 f" category={self.__category}, purchase_date= {self.__purchase_date},"
                 f" quantity= {self.__quantity}")
+
+    def __repr__(self):
+        return (f"{self.__class__.__name__}"
+                f"(purchase_name='{self.__purchase_name}', "
+                f"price='{self.__price}', "
+                f"category='{self.__category}', "
+                f"purchase_date='{self.__purchase_date}', "
+                f"quantity='{self.__quantity}')")
