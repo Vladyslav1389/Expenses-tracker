@@ -32,6 +32,15 @@ class Purchase:
         if new_quantity > 0:
             self.__quantity = new_quantity
 
+    def set_purchase_name(self):
+        print(f"Current purchase name is {self.__purchase_name}.")
+        new_purchase_name = input("Enter new purchase_name: ").strip()
+        if new_purchase_name.lower() == 'exit':
+            pass
+        else:
+            self.__purchase_name = new_purchase_name
+            print(f"The purchase name was changed to {self.__purchase_name}")
+
     def set_purchase_price(self, value):
         pass
 
@@ -72,3 +81,4 @@ class Purchase:
                 f"category='{self.__category}', "
                 f"purchase_date='{self.__purchase_date}', "
                 f"quantity='{self.__quantity}')")
+ 
