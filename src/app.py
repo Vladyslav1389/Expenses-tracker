@@ -41,15 +41,17 @@ class Purchase:
             self.__purchase_name = new_purchase_name
             print(f"The purchase name was changed to {self.__purchase_name}")
 
-    def set_purchase_price(self, value):
-        pass
+    def set_price(self):
+        print(f"Current price is {self.__price}.")
+        message = "Enter new price: "
+        self.__price = validate_positive_number(message)
+        print(f"New price is {self.__price}")
 
     def increase_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
         message="How much do you want to increase the quantity?: "
         self.__quantity += validate_positive_number(message)
         print(f"New quantity is {self.__quantity}")
-        return self.__quantity
 
     def decrease_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
@@ -61,7 +63,6 @@ class Purchase:
         else:
             self.__quantity -= value
         print(f"New quantity is {self.__quantity}")
-        return self.__quantity
 
     def display_purchase(self):
         details = f"\n{self.__purchase_name} - {self.__price}£, {self.__category},"
