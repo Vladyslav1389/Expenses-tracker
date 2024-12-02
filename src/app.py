@@ -28,9 +28,11 @@ class Purchase:
     def get_quantity(self):
         return self.__quantity
 
-    def set_quantity(self, new_quantity):
-        if new_quantity > 0:
-            self.__quantity = new_quantity
+    def set_quantity(self):
+        print(f"Current quantity is {self.__quantity}.")
+        message = "Enter new quantity: "
+        self.__quantity = validate_positive_number(message)
+        print(f"New quantity is {self.__quantity}")
 
     def set_purchase_name(self):
         print(f"Current purchase name is {self.__purchase_name}.")
@@ -49,13 +51,13 @@ class Purchase:
 
     def increase_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
-        message="How much do you want to increase the quantity?: "
+        message = "How much do you want to increase the quantity?: "
         self.__quantity += validate_positive_number(message)
         print(f"New quantity is {self.__quantity}")
 
     def decrease_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
-        message="How much do you want to decrease the quantity?: "
+        message = "How much do you want to decrease the quantity?: "
         value = validate_positive_number(message)
         if value >= self.__quantity:
             print("Quantity could not be less than 1")
