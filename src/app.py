@@ -49,6 +49,19 @@ class Purchase:
         self.__price = validate_positive_number(message)
         print(f"New price is {self.__price}")
 
+    def set_category(self):
+        print(f"Current category: {self.__category}")
+        flag = True
+        while flag:
+            new_category = input("Please enter new category: ").strip().capitalize()
+            if new_category == "Exit":
+                flag = False
+            elif len(new_category) != 0:
+                self.__category = new_category
+                flag = False
+            else:
+                print("You entered nothing, please try again.")
+
     def increase_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
         message = "How much do you want to increase the quantity?: "
