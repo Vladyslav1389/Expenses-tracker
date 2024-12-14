@@ -1,16 +1,18 @@
 from .additional_functions import validate_positive_number
 from datetime import datetime as dt
+
+
+DATETIME_STRING_FORMAT = "%Y-%m-%d %H:%M:%S"
 current_date = dt.now
 
-price = input()
 
 class Purchase:
     def __init__(self, purchase_name: str, price: float, category: str,
-                 purchase_date=str(current_date()), quantity=1):
+                 purchase_date=current_date(), quantity=1):
         self.__purchase_name = purchase_name
         self.__price = price
         self.__category = category
-        self.__purchase_date = purchase_date
+        self.__purchase_date = purchase_date.strftime(DATETIME_STRING_FORMAT)
         self.__quantity = quantity
 
     def get_purchase_name(self):
