@@ -64,6 +64,20 @@ class Purchase:
             else:
                 print("You entered nothing, please try again.")
 
+    def set_purchase_date(self):
+        flag = True
+        while flag:
+            try:
+                message = (f"Please enter new date in the format 'year-month-day"
+                 f" hour:minute:second' \n(the 'hour:minute:second' is optional,"
+                 f" if none inputed it equals to zero)\n: ")
+                new_date = input(message).strftime(DATETIME_STRING_FORMAT)
+                self.__purchase_date = new_date
+                print("The purchase date was changed successfully!")
+            except Exception as err:
+                print(f"{err}")
+
+
     def increase_quantity(self):
         print(f"Current quantity is {self.__quantity}.")
         message = "How much do you want to increase the quantity?: "
