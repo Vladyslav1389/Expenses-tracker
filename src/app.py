@@ -113,4 +113,8 @@ class Purchase:
                 f"category='{self.__category}', "
                 f"purchase_date='{self.__purchase_date}', "
                 f"quantity='{self.__quantity}')")
- 
+
+
+class PurchaseList():
+    def __init__(self):
+        self.__purchases = []
