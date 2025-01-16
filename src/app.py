@@ -2,7 +2,7 @@ from .additional_functions import validate_positive_number
 from datetime import datetime as dt
 
 
-DATETIME_STRING_FORMAT = "%Y-%m-%d %H:%M:%S"
+DATETIME_STRING_FORMAT = "%Y-%m-%d"
 current_date = dt.now
 
 
@@ -69,13 +69,14 @@ class Purchase:
         while flag:
             try:
                 message = (f"Please enter new date in the format 'year-month-day"
-                 f" hour:minute:second' \n(the 'hour:minute:second' is optional,"
-                 f" if none inputed it equals to zero)\n: ")
-                new_date = input(message).strftime(DATETIME_STRING_FORMAT)
+                 f" : ")
+                user_input_date = input(message)
+                new_date = dt.strptime(user_input_date, DATETIME_STRING_FORMAT)
                 self.__purchase_date = new_date
                 print("The purchase date was changed successfully!")
+                flag = False
             except Exception as err:
-                print(f"{err}")
+                print(f"Ops {err}")
 
 
     def increase_quantity(self):
